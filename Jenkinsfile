@@ -35,7 +35,7 @@ pipeline {
 
     stage('Run Docker Container') {
       steps {
-        sh 'docker pull '
+        sh 'docker pull ivanyou98/webapp:${BUILD_NUMBER}'
         sh 'docker run -d -p 8086:8080 ivanyou98/webapp:${BUILD_NUMBER}'
       }
     }
