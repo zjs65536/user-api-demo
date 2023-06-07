@@ -28,14 +28,15 @@ pipeline {
       steps {
         withCredentials([usernamePassword(credentialsId: 'docker-hub-credentials', usernameVariable: 'DOCKER_USERNAME', passwordVariable: 'DOCKER_PASSWORD')]) {
           sh 'docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD'
-          sh 'docker push your-image-name'
+          sh 'docker push ivanyou98/webapp:${BUILD_NUMBER}'
         }
       }
     }
 
     stage('Run Docker Container') {
       steps {
-        sh 'docker run -d -p 8086:8080 your-image-name'
+        sh 'docker pull '
+        sh 'docker run -d -p 8086:8080 ivanyou98/webapp:${BUILD_NUMBER}'
       }
     }
   }
