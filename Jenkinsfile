@@ -20,7 +20,7 @@ pipeline {
 
     stage('Build Docker Image') {
       steps {
-        sh 'docker build -t webapp:${BUILD_NUMBER} .'
+        sh 'docker build -t ivanyou98/webapp:${BUILD_NUMBER} .'
       }
     }
 
