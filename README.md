@@ -1,5 +1,4 @@
 # user-api-demo
 
 Add a webhook to trigger the build on Jenkins...
-A push from the local..
-A push from github...
+A push from github
